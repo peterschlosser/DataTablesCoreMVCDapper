@@ -1,0 +1,99 @@
+﻿@{
+    ViewData["Title"] = "Customers";
+}
+<link rel="stylesheet" href="~/lib/datatables.net-bs/css/dataTables.bootstrap.min.css" />
+
+@section Scripts {
+<script src="~/lib/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="~/lib/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $.ajaxSetup({
+            cache: false
+        });
+        $("#Customers").dataTable({
+            paging: true,
+            serverSide: true,
+            rowId: 'Id',
+            ajax: {
+                "url": "/home/ajaxdata",
+                "type": "POST",
+            },
+            columns: [
+                {
+                    name: "FirstName",      // request database table column name
+                    data: "firstName",      // result camel-cased name changed by JsonResult()
+                    title: "First",         // html table column heading name
+                    sortable: true,
+                    searchable: true
+                },
+                {
+                    name: "LastName",
+                    data: "lastName",
+                    title: "Last",
+                    sortable: true,
+                    searchable: true
+                },
+                {
+                    name: "CompanyName",
+                    data: "companyName",
+                    title: "Company",
+                    sortable: true,
+                    searchable: true
+                },
+                {
+                    name: "Address",
+                    data: "address",
+                    title: "Address",
+                    sortable: true,
+                    searchable: true
+                },
+                {
+                    name: "City",
+                    data: "city",
+                    title: "City",
+                    sortable: true,
+                    searchable: true
+                },
+                {
+                    name: "State",
+                    data: "state",
+                    title: "State",
+                    sortable: true,
+                    searchable: true
+                },
+                {
+                    name: "Zip",
+                    data: "zip",
+                    title: "Zip",
+                    sortable: true,
+                    searchable: true
+                },
+                {
+                    name: "Phone1",
+                    data: "phone1",
+                    title: "Home",
+                    sortable: true,
+                    searchable: true
+                },
+                {
+                    name: "Phone2",
+                    data: "phone2",
+                    title: "Work",
+                    sortable: true,
+                    searchable: true
+                },
+                {
+                    name: "Email",
+                    data: "email",
+                    title: "Email",
+                    sortable: true,
+                    searchable: true
+                },
+            ]
+        });
+    });
+</script>
+}
+<h2>Customers</h2>
+<table id="Customers" class="table table-striped table-hover dataTable"></table>
