@@ -3,7 +3,7 @@ jQuery DataTables Demo using ASP.NET Core MVC and Dapper ORM
 
 A simple and concise demonstration of the [jQuery DataTables plugin](https://datatables.net/) within the ASP.NET Core MVC Framework using Dapper ORM.
 
-A basic<sup name="a1">[1](#f1)</sup> demonstration including sample data and the references one needs to build, demonstrate and [integrate](DataTablesCoreMVCEntity/README.md) DataTables into your project.
+A basic<sup name="a1">[1](#f1)</sup> demonstration including sample data and the references one needs to build, demonstrate and [integrate](DataTablesCoreMVCDapper/README.md) DataTables into your project.
 
 ## Key Components
   * A ModelBinder to parse the application/x-www-form-urlencoded input from the DataTables AJAX request into the appropriate DataTablesRequest Class Model (data structure) and greatly simplify the interface between Controller (to which the AJAX requests route) and the BLL (Business Logic Layer).
